@@ -1,0 +1,70 @@
+
+
+RewriteEngine On
+
+# rewrite for the frontend  - основной редирект в frontend/web ssl
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#RewriteRule ^backend/web(/(.*))?$ 404 [L=1]
+# когда дело доходит до фронтенда или бэ    кэнда
+#RewriteRule ^(backend|admin/4D24A94C78C98DB9)/web/ - [L]
+
+# Handle the case of backend, skip ([S=1]) the following rule, if current matched
+RewriteRule ^admin/4D24A94C78C98DB9(/(.*))?$ backend/web/$2 [S=1]
+
+
+# handle the case of frontend
+RewriteRule .* frontend/web/$0
+
+# Uncomment the following, if you want speaking URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+/web)/.*$ $1/index.php
+
+
+
+# same for backend - то же самое, но для бэкенда
+#RewriteCond %{REQUEST_URI} ^/backend/web
+
+RewriteCond %{REQUEST_METHOD} ^(TRACE|DELETE|TRACK|DEBUG) [NC]
+RewriteCond %{QUERY_STRING} ^(.*)([-_a-z]{1,15})=(eval|chmod|chdir|mkdir|rmdir|whoami|uname|unzip|gunzip|grep|more|umask|telnet|ssh|ftp|which|mkmode|touch|logname|edit_file|search_text|find_text|php_eval|download_file|ftp_file_down|ftp_file_up|ftp_brute|mail_file|mysql|mysql_dump|db_query|file_get_contents)([^a-zA-Z0-9].+)*$ [OR]
+RewriteCond %{QUERY_STRING} ^(.*)(wget|shell_exec|passthru|popen|proc_open)(.*)$
+RewriteRule .* - [F,L]
+RewriteCond %{REQUEST_METHOD} ^(HEAD|GET) [NC]
+RewriteCond %{HTTP:Range} ([0-9]*-[0-9]*)(\s*,\s*[0-9]*-[0-9]*)+
+RewriteRule .* - [F]
+RewriteCond %{QUERY_STRING} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*embed.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (<|%3C)([^e]*e)+mbed.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*object.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (<|%3C)([^o]*o)+bject.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (<|%3C)([^i]*i)+frame.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [NC,OR]
+RewriteCond %{QUERY_STRING} base64_(en|de)code[^(]*\([^)]*\) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} ^.*(\(|\)|<|>|%3c|%3e).* [NC,OR]
+RewriteCond %{QUERY_STRING} ^.*(\x00|\x04|\x08|\x0d|\x1b|\x3c|\x3e|\x7f).* [NC,OR]
+RewriteCond %{QUERY_STRING} (NULL|OUTFILE|LOAD_FILE) [NC,OR]
+RewriteCond %{QUERY_STRING} concat[^\(]*\( [NC,OR]
+RewriteCond %{QUERY_STRING} union([^s]*s)+elect [NC,OR]
+RewriteCond %{QUERY_STRING} union([^a]*a)+ll([^s]*s)+elect [NC,OR]
+RewriteCond %{QUERY_STRING} \-[sdcr].*(allow_url_include|allow_url_fopen|safe_mode|disable_functions|auto_prepend_file) [NC,OR]
+RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
+RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
+RewriteCond %{QUERY_STRING} (\s*)\s*{\s*:;\s*};
+RewriteCond %{THE_REQUEST} (\s*)\s*{\s*:;\s*};
+RewriteCond %{HTTP_REFERER} (\s*)\s*{\s*:;\s*};
+RewriteCond %{HTTP_USER_AGENT} (\s*)\s*{\s*:;\s*};
+RewriteRule .* - [F,L]
+
+Order Deny,Allow
+Deny from 157.56.0.0/14
+
+#<IfModule mod_headers.c>
+#Header set X-XSS-Protection "1; mode=block"
+#</IfModule>
