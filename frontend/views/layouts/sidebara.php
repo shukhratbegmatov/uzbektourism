@@ -20,7 +20,6 @@ $hak = Hackers::find()->where(['ip' => Yii::$app->request->userIP])->count();
 <link href="<?=\yii\helpers\Url::to(["../images/gerb1.png"], true)?>"  rel="icon">
 <section class="wf100 subheader" style="">
     <div class="container">
-<!--        <h2 class="text-center" >--><?//= $this->params['titlebreadcrumbs'] ?><!--</h2>-->
     </div>
 <!--    <div class="parallax-breadcrumb">-->
 <!--        <img style="height: 373px; z-index: -1;" src="--><?//=\yii\helpers\Url::to(["../images/header_img.PNG"], true)?><!--" alt="" class="img-responsive">-->

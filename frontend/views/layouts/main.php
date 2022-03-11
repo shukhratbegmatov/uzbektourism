@@ -213,7 +213,6 @@ $menu =  Menu1::find()->select([ 'id', 'name_'.\Yii::$app->language, 'link', 'pa
     </header>
     <section class="wf100 subheader">
 <!--        <div class="container">-->
-            <!--        <h2 class="text-center" style="">--><?//= $this->params['titlebreadcrumbs'] ?><!--</h2>-->
 <!--        </div>-->
         <div class="headerss1">
 

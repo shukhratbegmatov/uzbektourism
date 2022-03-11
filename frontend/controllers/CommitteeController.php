@@ -7,6 +7,7 @@
 
 namespace frontend\controllers;
 use common\models\Aboutus;
+use common\models\CorruptionForm;
 use common\models\Covid;
 use common\models\Contact;
 use common\models\Galereya;
@@ -335,6 +336,13 @@ class CommitteeController extends Controller
         ]);
     }
     public function actionCorruption(){
+
+        $model = new CorruptionForm();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()){
+            return $this->redirect(['corruption']);
+
+        }
         return $this->render('corruption');
     }
     public function actionGalereya(){

@@ -47,7 +47,6 @@ $year4 = date('Y') - 4;
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 <section class="wf100 subheader" style="">
 <!--    <div class="container">-->
-<!--        <h2 class="text-center" >--><?//= $this->params['titlebreadcrumbs'] ?><!--</h2>-->
 <!--    </div>-->
 <!--    <div class="parallax-breadcrumb">-->
 <!--        <img id="img12"  style="height: 391px; z-index: -1;" src="--><?//=\yii\helpers\Url::to(["../images/header_img.PNG"], true)?><!--" alt="" class="img-responsive img12" data-action="zoom1 !impotant">-->

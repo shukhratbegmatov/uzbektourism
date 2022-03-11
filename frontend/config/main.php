@@ -55,20 +55,39 @@ return [
 ////                'encryption' => 'ssl', // It is often used, check your provider or mail server specs
 //            ],
 //        ],
-
-
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'mail.uzbektourism.uz',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
-                'username' => 'errors@uzbektourism.uz',
-                'password' => '23sdf78bn',
-                'port' => '587', // Port 25 is a very common port too
-//                'encryption' => 'ssl', // It is often used, check your provider or mail server specs
+                'encryption' => 'ssl',
+                'host' => 'smtp.mail.ru',
+                'port' => 465,
+                'username' => 'miui_dilwod@mail.ru',
+                'password' => 'Dt39UJeRMMqBEPRBk0Tm',
+                'streamOptions' => [
+                    'ssl' => [
+                        'allow_self_signed' => false,
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                    ],
+                ]
             ],
         ],
+
+
+//        'mailer' => [
+//            'class' => 'yii\swiftmailer\Mailer',
+//            'useFileTransport' => false,
+//            'transport' => [
+//                'class' => 'Swift_SmtpTransport',
+//                'host' => 'mail.uzbektourism.uz',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+//                'username' => 'errors@uzbektourism.uz',
+//                'password' => '23sdf78bn',
+//                'port' => '587', // Port 25 is a very common port too
+////                'encryption' => 'ssl', // It is often used, check your provider or mail server specs
+//            ],
+//        ],
 
 
         'recaptchaV3' => [

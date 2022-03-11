@@ -211,7 +211,6 @@ background-image: url('https://new.uzbektourism.uz/frontend/web/5.png')">
                         <!-- Post Title -->
                         <a href="<?=\yii\helpers\Url::to(['news/view?id='.$news->id], true)?>">
                             <!--                        <h5>-->
-                            <? //= mb_substr($news->{'title_'.$lang},0,50) ?><!--</h5>-->
                             <h5 class="sansserif " style="color: #6c757d;"><?= \yii\helpers\StringHelper::truncate($news->{'title_' . $lang}, 97,' ...' ); ?></h5>
 
                         </a>
