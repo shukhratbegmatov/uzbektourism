@@ -341,7 +341,7 @@ class CommitteeController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             Yii::$app->mailer->compose()
-                ->setFrom('shuukhratbegmatov@gmail.com')
+                ->setFrom('murojaat@motach.uz')
                 ->setTo(array('shukhratbegmatov2147@gmail.com', 'ortiqovbahodir1902@gmail.com'))
                 ->setSubject("Saytdan xat keldi")
                 ->setTextBody('')

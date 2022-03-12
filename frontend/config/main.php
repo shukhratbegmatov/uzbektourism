@@ -7,7 +7,7 @@ $params = array_merge(
 );
 
 return [
-    'language'   => 'uz',
+    'language' => 'uz',
     'sourceLanguage' => 'uz_UZ',
 //    'modules' => [
 //        'gii' => [
@@ -63,8 +63,8 @@ return [
                 'encryption' => 'ssl',
                 'host' => 'smtp.gmail.com',
                 'port' => 465,
-                'username' => 'shuukhratbegmatov@gmail.com',
-                'password' => 'kirmaxafli',
+                'username' => 'murojaat@motach.uz',
+                'password' => 'oDA$SNkUEBh$',
                 'streamOptions' => [
                     'ssl' => [
                         'allow_self_signed' => false,
@@ -121,10 +121,9 @@ return [
             'enableLanguageDetection' => false,
             'languages' => ['uz', 'en', 'cyrl1', 'ru'],
         ],
-        'MyComponent'=>[
-            'class'=>'frontend\components\MyComponent'
+        'MyComponent' => [
+            'class' => 'frontend\components\MyComponent'
         ]
-
 
 
     ],
