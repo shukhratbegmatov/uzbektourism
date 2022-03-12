@@ -339,9 +339,22 @@ class CommitteeController extends Controller
 
         $model = new CorruptionForm();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()){
-            return $this->redirect(['corruption']);
-
+        if ($model->load(Yii::$app->request->post())) {
+            Yii::$app->mailer->compose()
+                ->setFrom('shuukhratbegmatov@gmail.com')
+                ->setTo(array('shukhratbegmatov2147@gmail.com', 'ortiqovbahodir1902@gmail.com'))
+                ->setSubject("Saytdan xat keldi")
+                ->setTextBody('')
+                ->setHtmlBody('Имя: '.$model->full_name.'<br>'.
+                    'Электронная почта: '.$model->email.'<br>'.
+                    'Address: '.$model->address.'<br>'.
+                    'User: '. $model->type. '<br>'.
+                    'Phone: '. $model->phone. '<br>'.
+                    'Содержание: '. $model->text
+                )
+                ->send();
+            Yii::$app->session->setFlash('success', Yii::t('app', 'Xabaringiz muvofiqqiyatli jo\'natildi!'));
+            return $this->refresh();
         }
         return $this->render('corruption');
     }

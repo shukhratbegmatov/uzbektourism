@@ -18,7 +18,7 @@ class CorruptionForm extends \yii\base\Model
     {
         return [
             [['full_name', 'address', 'phone', 'email','text'], 'string'],
-            [['type',], 'integer'],
+            [['type',], 'string'],
         ];
     }
 
@@ -26,16 +26,8 @@ class CorruptionForm extends \yii\base\Model
     public function save()
     {
 
-        if (!$this->validate()){
-            return false;
+        if ($this->validate()){
+            return true;
         }
-        $text = '<h3>Ism familiya</h3>'.$this->full_name;
-        $text =" ". $text  . $this->email;
-        Yii::$app->mailer->compose()
-            ->setFrom('ortiqovbahodir1902@gmail.com')
-            ->setTo('ortiqovbahodir1902@gmail.com')
-            ->setSubject('Sizga habar qoldirildi corrupsiya')
-            ->setHtmlBody('dasdasdasd')
-            ->send();
     }
 }

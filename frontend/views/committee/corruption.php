@@ -128,32 +128,32 @@ $this->params['titlebreadcrumbs'] = Yii::t('app', 'Korrupsiyaga qarshi');
             <div class="col-md-12 input">
                 <label for="">Kim tomonidan</label>
                 <select name="CorruptionForm[type]" id="" class="form-control">
-                    <option value="1">Jismoniy shaxs</option>
-                    <option value="2">Yuridik shaxs</option>
+                    <option value="Jismoniy shaxs">Jismoniy shaxs</option>
+                    <option value="Yuridik shaxs">Yuridik shaxs</option>
 
                 </select>
             </div>
             <div class="col-md-12 input">
                 <label for="">Ariza beruvchining ism familiyasi*</label>
-                <input type="text" name="CorruptionForm[full_name]" class="form-control" placeholder="Ф.И.Ш">
+                <input type="text" required name="CorruptionForm[full_name]" class="form-control" placeholder="Ф.И.Ш">
             </div>
             <div class="col-md-12 input">
                 <label for="">Manzil*</label>
-                <input type="text" name="CorruptionForm[address]" class="form-control" placeholder="Манзилингиз">
+                <input type="text" required name="CorruptionForm[address]" class="form-control" placeholder="Манзилингиз">
             </div>
             <div class="justify-content-between">
                 <div class="col-md-6 input">
                     <label for="">Telefon *</label>
-                    <input type="text" name="CorruptionForm[phone]" class="form-control" placeholder="Телефон">
+                    <input type="text" required name="CorruptionForm[phone]" class="form-control" placeholder="Телефон">
                 </div>
                 <div class="col-md-6 input">
                     <label for="">Elektron pochta *</label>
-                    <input type="text" name="CorruptionForm[email]" class="form-control" placeholder="Электрон почта">
+                    <input type="text" required name="CorruptionForm[email]" class="form-control" placeholder="Электрон почта">
                 </div>
             </div>
             <div class="col-md-12 input">
                 <label for="">Murojat xati *</label>
-                <textarea type="text" name="CorruptionForm[text]" class="form-control" placeholder="Мурожаат матни" rows="5"></textarea>
+                <textarea type="text" required name="CorruptionForm[text]" class="form-control" placeholder="Мурожаат матни" rows="5"></textarea>
             </div>
 
         </div>

@@ -61,10 +61,10 @@ return [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'encryption' => 'ssl',
-                'host' => 'smtp.mail.ru',
+                'host' => 'smtp.gmail.com',
                 'port' => 465,
-                'username' => 'miui_dilwod@mail.ru',
-                'password' => 'Dt39UJeRMMqBEPRBk0Tm',
+                'username' => 'shuukhratbegmatov@gmail.com',
+                'password' => 'kirmaxafli',
                 'streamOptions' => [
                     'ssl' => [
                         'allow_self_signed' => false,
