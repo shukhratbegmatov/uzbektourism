@@ -114,61 +114,61 @@ $this->params['titlebreadcrumbs'] = Yii::t('app', 'Korrupsiyaga qarshi');
 
 <div class="tab-page">
     <div class="tab d-flex">
-        <button class="tablinks active d-flex" onclick="openCity(event, 'London')">Murojat</button>
-        <button class="tablinks d-block" onclick="openCity(event, 'Paris')">идоравий хужжатлар</button>
-        <button class="tablinks d-block" onclick="openCity(event, 'Tokyo')">амалга ошириладиган ишлар</button>
+        <button class="tablinks active d-flex" onclick="openCity(event, 'London')"><?= Yii::t('app', "Murojat"); ?></button>
+        <button class="tablinks d-block" onclick="openCity(event, 'Paris')"><?= Yii::t('app', "Idoraviy hujjatlar"); ?></button>
+        <button class="tablinks d-block" onclick="openCity(event, 'Tokyo')"><?= Yii::t('app', "Amalga oshiriladigan ishlar"); ?></button>
     </div>
 
 
     <div id="London" class="tabcontent" style="display: block">
-        <h3 style="padding-top: 15px">Xodimlar xatti xarakatiga oid korrupsiyani oldini olish bo'yicha murojat</h3>
+        <h3 style="padding-top: 15px"><?= Yii::t('app', "Xodimlar xatti xarakatiga oid korrupsiyani oldini olish bo'yicha murojat"); ?></h3>
 
         <?php $form = \yii\widgets\ActiveForm::begin(); ?>
         <div class="row">
             <div class="col-md-12 input">
-                <label for="">Kim tomonidan</label>
+                <label for=""><?= Yii::t('app', "Kim tomonidan"); ?></label>
                 <select name="CorruptionForm[type]" id="" class="form-control">
-                    <option value="Jismoniy shaxs">Jismoniy shaxs</option>
-                    <option value="Yuridik shaxs">Yuridik shaxs</option>
+                    <option value="Jismoniy shaxs"><?= Yii::t('app', "jismoniy shaxs"); ?></option>
+                        <option value="Yuridik shaxs"><?= Yii::t('app', "Yuridik shaxs"); ?>s</option>
 
                 </select>
             </div>
             <div class="col-md-12 input">
-                <label for="">Ariza beruvchining ism familiyasi*</label>
+                <label for=""><?= Yii::t('app', "Ariza beruvchining ism familiyasi"); ?> *</label>
                 <input type="text" required name="CorruptionForm[full_name]" class="form-control" placeholder="Ф.И.Ш">
             </div>
             <div class="col-md-12 input">
-                <label for="">Manzil*</label>
-                <input type="text" required name="CorruptionForm[address]" class="form-control" placeholder="Манзилингиз">
+                <label for=""><?= Yii::t('app', "Manzil"); ?> *</label>
+                <input type="text" required name="CorruptionForm[address]" class="form-control" placeholder="<?= Yii::t('app', "Manzil"); ?>">
             </div>
             <div class="justify-content-between">
                 <div class="col-md-6 input">
-                    <label for="">Telefon *</label>
-                    <input type="text" required name="CorruptionForm[phone]" class="form-control" placeholder="Телефон">
+                    <label for=""><?= Yii::t('app', "Telefon"); ?> *</label>
+                    <input type="text" required name="CorruptionForm[phone]" class="form-control" placeholder="<?= Yii::t('app', "Telefon"); ?>">
                 </div>
                 <div class="col-md-6 input">
-                    <label for="">Elektron pochta *</label>
-                    <input type="text" required name="CorruptionForm[email]" class="form-control" placeholder="Электрон почта">
+                    <label for=""><?= Yii::t('app', "Elektron pochta"); ?> *</label>
+                    <input type="text" required name="CorruptionForm[email]" class="form-control" placeholder="<?= Yii::t('app', "Elektron pochta"); ?> ">
                 </div>
             </div>
             <div class="col-md-12 input">
-                <label for="">Murojat xati *</label>
-                <textarea type="text" required name="CorruptionForm[text]" class="form-control" placeholder="Мурожаат матни" rows="5"></textarea>
+                    <label for=""><?= Yii::t('app', "Murojat xati"); ?> *</label>
+                <textarea type="text" required name="CorruptionForm[text]" class="form-control" placeholder="<?= Yii::t('app', "Murojat xati"); ?>" rows="5"></textarea>
             </div>
 
         </div>
-        <button type="submit" class="btn btn-success input">Jo'natish</button>
+        <button type="submit" class="btn btn-success input"><?= Yii::t('app', "Jo'natish"); ?></button>
         <?php \yii\widgets\ActiveForm::end() ?>
 
 
     </div>
 
     <div id="Paris" class="tabcontent">
-        <h3>Коррупцияга карши курашиш буйича идоравий хужжатлар</h3>
+        <h3><?= Yii::t('app', "Korrupsiyaga kurashish bo'yicha idoraviy hudjjatlar"); ?></h3>
     </div>
 
     <div id="Tokyo" class="tabcontent mb-4 pb-5">
-        <h3>Коррупцияга карши курашиш буйича амалга оширилайотган ишлар</h3>
+        <h3><?= Yii::t('app', "Korrupsiyaga qarshi kurasish amalga oshirilayotgan ishlar"); ?></h3>
     </div>
     <script>
         function openCity(evt, cityName) {

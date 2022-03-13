@@ -377,5 +377,19 @@ For more information please contact us.",
     "Manzil"=>"Address",
     "100084, Toshkent shahri, Amir Temur shoh ko‘chasi, 107B-uy"=>" Amir Temur Avenue 107B, Tashkent, 100084",
     "E-mail"=>"Email",
-    'DXSh loyihalari'=>'PPP projects'
+    'DXSh loyihalari'=>'PPP projects',
+
+    'Murojat' => 'Apply',
+    'Idoraviy hujjatlar' => 'Office documents',
+    'Kim tomonidan' => 'By whom',
+    'jismoniy shaxs' => 'Individual',
+    'Yuridik shaxs' => 'Entity',
+    'Murojat xati' => 'Application letter',
+    'Jo\'natish' => 'Send',
+    'Korrupsiyaga qarshi kurasish amalga oshirilayotgan ishlar' => 'Anti-corruption work',
+    'Korrupsiyaga kurashish bo\'yicha idoraviy hudjjatlar' => 'Anti-corruption departmental documents',
+    'Ariza beruvchining ism familiyasi' => 'Name and surname of the applicant',
+    'Amalga oshiriladigan ishlar' => 'Work to be done',
+    'Xodimlar xatti xarakatiga oid korrupsiyani oldini olish bo\'yicha murojat' => 'Addressing the prevention of corruption in employee behavior',
 ];
+
